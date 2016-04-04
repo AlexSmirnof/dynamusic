@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<dataset>
+  <registry-descriptor>
+    <timekey>true</timekey>
+    <display-name>DPS ClickThrough</display-name>
+    <description>This will record DPS clickthrough events.</description>
+    <mapper>/clickthroughmapper.xml</mapper>
+    <id>/clickthrough.xml</id>
+  </registry-descriptor>
+  <sampling>
+    <filter>all</filter>
+    <units>percent</units>
+    <rate>1</rate>
+  </sampling>
+</dataset>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE process SYSTEM "dynamosystemresource:/atg/dtds/pdl/pdl_1.0.dtd">
+<process author="admin" creation-time="1459201746389" enabled="true" last-modified-by="admin" modification-time="1459201900883">
+  <segment migrate-subjects="true">
+    <segment-name>Segment 1</segment-name>
+    <!--================================-->
+    <!--== Clicks a link to page named ATG Application:/albumDetails.jsp  -->
+    <!--================================-->
+    <event id="1">
+      <event-name>atg.dps.ClickThrough</event-name>
+      <filter construct="click-through-to-link-path-name-filter" operator="eq">
+        <event-property>
+          <property-name>destinationScenarioPathInfo</property-name>
+        </event-property>
+        <constant>ATG Application:/albumDetails.jsp</constant>
+      </filter>
+    </event>
+    <!--================================-->
+    <!--== Record event Clicks a link in dataset DPS ClickThrough  -->
+    <!--================================-->
+    <action id="2">
+      <action-name>recordEvent</action-name>
+      <action-param name="dataset">
+        <constant>/clickthrough.xml</constant>
+      </action-param>
+    </action>
+  </segment>
+</process>
